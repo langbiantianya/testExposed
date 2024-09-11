@@ -44,6 +44,21 @@ fun main() {
         it[TestUpsertTable.age] = 13
         it[TestUpsertTable.tags] = listOf("量子", "虚数")
       },
+    ) {
+      it[name] = "孤注一掷的掷骰者"
+      it[number] = "4086"
+      it[age] = 22
+      it[tags] = listOf("物理", "冰", "雷", "虚数")
+    }
+  }
+
+  transaction {
+    TestUpsertTable.upsert(
+      TestUpsertTable.name, TestUpsertTable.number,
+      onUpdate = {
+        it[TestUpsertTable.age] = 13
+        it[TestUpsertTable.tags] = listOf("量子", "虚数")
+      },
       where = {
         TestUpsertTable.name eq "孤注一掷的掷骰者"
       }
