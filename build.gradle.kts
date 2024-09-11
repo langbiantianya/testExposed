@@ -16,8 +16,8 @@ repositories {
 
 dependencies {
   testImplementation(kotlin("test"))
-    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
-//  implementation(files("lib/exposed-core-0.54.0.jar"))
+//    implementation("org.jetbrains.exposed:exposed-core:$exposedVersion")
+  implementation(files("lib/exposed-core-0.54.0.jar"))
 //  implementation("org.jetbrains.exposed:exposed-crypt:$exposedVersion")
   implementation("org.jetbrains.exposed:exposed-dao:$exposedVersion") {
     exclude(group = "org.jetbrains.exposed", module = "exposed-core")
